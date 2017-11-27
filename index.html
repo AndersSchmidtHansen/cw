@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>College Weekend???</title>
+  <script src="https://unpkg.com/vue"></script>
+</head>
+<body>
+  <center id="app">
+    <h1>Er det College Weekend?</h1>
+    <h2 style="font-size:100px;">{{ isCollegeWeekend }}</h2>
+  </center>
+
+  <script>
+    var app = new Vue({
+      el: '#app',
+      data: {
+        greeting: 'Welcome to your Vue.js app!',
+        docsURL: 'http://vuejs.org/guide/',
+        discordURL: 'https://chat.vuejs.org',
+        forumURL: 'http://forum.vuejs.org/'
+      },
+      computed: {
+        isCollegeWeekend () {
+          var d = new Date()
+          var year = d.getFullYear()
+
+          var someDate = new Date('19 Jan ' + year).toDateString()
+          var today = new Date().toDateString()
+          var datesAreSame = (today === someDate)
+
+          return datesAreSame ? 'Ja!' : 'NEJ!'
+        }
+      },
+      methods: {}
+    })
+  </script>
+</body>
+</html>
